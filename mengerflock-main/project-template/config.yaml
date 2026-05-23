@@ -1,0 +1,58 @@
+project:
+  name: "my-algorithm"
+  seed_path: "./seed/"
+  original_seed_path: "../project-template/original-seed/"
+  language: "c"
+  # paper: "../project-template/paper.pdf"
+
+modules:
+  - name: "core_logic"
+    files: ["src/core.c"]
+    description: "Main algorithm logic"
+  - name: "heuristics"
+    files: ["src/heuristic.c"]
+    description: "Heuristic evaluation functions"
+
+build:
+  command: "make -j4"
+  binary: "./solver"
+
+benchmarks:
+  small: ["../project-template/datasets/holdout/small_*"]
+  medium: ["../project-template/datasets/holdout/med_*"]
+  large: ["../project-template/datasets/holdout/large_*"]
+
+training:
+  train: "../project-template/datasets/train/"
+  validation: "../project-template/datasets/validation/"
+  # data_source: "split"                    # "split" | "generate" | "download" | "manual"
+  # split_source: "datasets/all/"
+  # split_ratios: [0.6, 0.2, 0.2]
+  # stratify_by: "instance_type"
+
+evaluation:
+  metric: "gap_to_optimal"
+  runs_per_instance: 5
+  random_seeds: [42, 123, 456, 789, 1024]
+  # pre_check: "python scripts/verify.py"   # optional: runs before eval.sh
+
+agents:
+  tool: "claude"
+  strategist:
+    model_flags: "--model opus"
+  researchers:
+    # count: 3
+    model_flags: "--model sonnet"
+    max_iterations_per_assignment: 20
+  wildcard:
+    model_flags: "--model opus"
+
+stopping_conditions:
+  max_total_iterations: 500
+  max_hours: 24
+  stagnation_window: 50
+  # max_reentries: 2
+
+# competition:
+#   target: "competition-name"
+#   description_template: "system_description.md"
