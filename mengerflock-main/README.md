@@ -1,3 +1,5 @@
+
+
 # MengerFlock
 
 A hierarchical multi-agent system that evolves algorithms through autonomous experimentation.
@@ -6,15 +8,7 @@ Give MengerFlock a codebase, a build step, and a benchmark — it will coordinat
 
 MengerFlock honors Karl Menger, an early pioneer of combinatorial optimization and the Traveling Salesman Problem, and "flock" reflects a coordinated group of AI research agents working together under a lead strategist to evolve better algorithms.
 
-## Contents
-
-- [Applicable Domains](#applicable-domains)
-- [How It Works](#how-it-works)
-- [Project Structure](#project-structure)
-- [User Guide](#user-guide)
-- [Validated Domains](#validated-domains)
-- [Citation](#citation)
-
+ 
 ## Applicable Domains
 
 Any codebase where you can compile, run against benchmarks, and get a number back. The requirements are simple: code + build step + measurable metric.
@@ -383,29 +377,4 @@ If budget is limited, prioritize the strategist — a weak strategist with stron
 | **TSP** | LKH-2 | 2/3 holdout instances at optimal, 94% gap closed on d2103 |
 | **Bin Packing** | First Fit Decreasing | 1622 to 1610 bins (41% gap closed), 5 instances at optimal |
 | **CVRPTW** | HGS-VRPTW (DIMACS 2021 winner) | Up to 1.92% metric reduction, 5 vehicle eliminations on 104 instances |
-
-## Citation
-
-If you use MengerFlock in your research, please cite it:
-
-```bibtex
-@software{ganganath2026mengerflock,
-  author = {Ganganath, Nuwan},
-  title = {MengerFlock: A hierarchical multi-agent system that evolves algorithms through autonomous experimentation},
-  year = {2026},
-  url = {https://github.com/manganganath/mengerflock}
-}
-```
-
-The CVRPTW results are published in:
-
-```bibtex
-@inproceedings{ganganath2026cvrptw,
-  author = {Ganganath, Nuwan},
-  title = {Autonomous Multi-Agent Algorithm Evolution for the Capacitated Vehicle Routing Problem with Time Windows},
-  booktitle = {Genetic and Evolutionary Computation Conference (GECCO Companion '26)},
-  year = {2026},
-  publisher = {ACM},
-  doi = {10.1145/3795101.3815556}
-}
-```
+ 
